@@ -60,7 +60,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}
                 console.dir(dataOne.daily[4]);
                 console.log(dataOne);
                 
-                for(let k = 0; k<4; k++){
+                for(let k = 0; k<5; k++){
                     let fiveDay = document.querySelectorAll('.container') ;
                     let temp;
                     let wind;
@@ -72,13 +72,12 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}
                     humidity = dataOne.daily[k].humidity;
                     uv = dataOne.daily[k].uvi;
 
-                    fiveDay.forEach(element =>{
-                        console.log(element.children);
-                        element.children[1].innerText = temp;
-                        element.children[2].innerText = wind;
-                        element.children[3].innerText = humidity;
-                        element.children[4].innerText = uv;
-                    })
+                    // console.log(element.children);
+                    fiveDay[k].children[1].innerText = "temp:" + temp;
+                    fiveDay[k].children[2].innerText = "wind:" + wind;
+                    fiveDay[k].children[3].innerText = "humidity:" + humidity;
+                    fiveDay[k].children[4].innerText = "uv:" + uv;
+                   
 
                 }
 
@@ -87,10 +86,24 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}
     })
 }
 
+const buttonName = document.getElementById('searchInput');
+
+
+
 searchCityButtonEl.on( "submit",function(event) { 
     event.preventDefault() 
     console.dir(event)
-    searchCity(event.target[0].value)})
+    searchCity(event.target[0].value);
+    console.log(searchCityButtonEl[0][0].value);
+    let buttonTitle = searchCityButtonEl[0][0].value;
+    let newLi = document.createElement('li');
+    let newButton = document.createElement('button');
+    newLi.appendChild(newButton);
+    newButton.innerText = buttonTitle;
+    newButton.classList.add('search-items');
+    searchButtonsEl.append(newLi);
+    
+})
 
 
     searchCity("Dallas")
