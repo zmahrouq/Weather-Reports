@@ -20,7 +20,7 @@
 
     <div>
       <div class="row">
-        <h2>Search for a City:</h2>
+        <h2>Search for a City: <span id="cityName"></span></h2>
         <form id=searchCityButton>
           <input type="text" />
           <button>Search</button>
@@ -30,16 +30,55 @@
       </div>
 
       <div class="box">
-        <div id="city">Atlanta <span id="date"> </span></div>
-        <div id="temp">Temp:</div>
-        <div id="wind">Wind:</div>
-        <div id="humidity">Humidity:</div>
+        <div id="city"><span id="date"> </span></div>
+        <div id="temp">Temp:<span></span></div>
+        <div id="wind">Wind:<span></span></div>
+        <div id="humidity">Humidity:<span></span></div>
         <div>UV index: <span id="uvindex"> 35 </span></div>
       </div>
 
       <div class="forecast">
         <h3>5-Day Forecast</h3>
-        <div class="row" id="forecastBoxes"></div>
+        <div class="rowForcast" id="forecastBoxes">
+          <div class="container 5-Day">
+            <h2>Day 1</h2>
+            <p>Temp: </p>
+            <p>Wind: </p>
+            <p>Humidity: </p>
+            <p>UV: </p>
+          </div>
+          <div class="container 5-Day">
+            <h2>Day 2</h2>
+            <p>Temp: </p>
+            <p>Wind: </p>
+            <p>Humidity: </p>
+            <p>UV: </p>
+          </div>
+          <div class="container 5-Day">
+            <h2>Day 3</h2>
+            <p>Temp: </p>
+            <p>Wind: </p>
+            <p>Humidity: </p>
+            <p>UV: </p>
+          </div>
+          <div class="container 5-Day">
+            <h2>Day 4</h2>
+            <p>Temp: </p>
+            <p>Wind: </p>
+            <p>Humidity: </p>
+            <p>UV: </p>
+          </div>
+          <div class="container 5-Day">
+            <h2>Day 5</h2>
+            <p>Temp: </p>
+            <p>Wind: </p>
+            <p>Humidity: </p>
+            <p>UV: </p>
+          </div>
+
+
+
+        </div>
       </div>
     </div>
 
